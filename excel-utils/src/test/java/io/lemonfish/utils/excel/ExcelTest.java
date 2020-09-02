@@ -1,4 +1,4 @@
-package com.lemonfish.utils.excel;
+package io.lemonfish.utils.excel;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -16,7 +16,7 @@ public class ExcelTest {
 
     @Test
     public void testRead() throws FileNotFoundException {
-        InputStream inputStream = new FileInputStream("/Users/duandian/Downloads/8a7acc22-e683-4ed2-8bb6-ebad3542cb0f.xls");
+        InputStream inputStream = new FileInputStream("/Users/vincelin/Downloads/8a7acc22-e683-4ed2-8bb6-ebad3542cb0f.xls");
         List<Entity> entities = ExcelReadUtils.readList(inputStream, 0, false, Entity.class);
         for (Entity entity : entities) {
             System.out.println(entity);
@@ -33,7 +33,7 @@ public class ExcelTest {
             entity.setProperty3(3);
             list.add(entity);
         }
-        ExcelWriteUtils.writeToExcel(list, Entity.class, new FileOutputStream("/Users/duandian/lemonfish.xls"), true);
+        ExcelWriteUtils.writeToExcel(list, Entity.class, new FileOutputStream("/Users/vincelin/lemonfish.xls"), false);
     }
 
 }
